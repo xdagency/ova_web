@@ -1,0 +1,97 @@
+/*
+    Settings
+*/
+
+// Variables
+
+$color__white: #f9f9f9;
+$color__black: #101010;
+$color__xlightgrey: #ececec;
+$color__lightgrey: #d9dada;
+$color__grey: #c3c3c4;
+$color__darkgrey: #a8a8a9;
+$color__xdarkgrey: #939293;
+
+$color__green: #55935f;
+$color__brightgreen: #d0ec9c;
+$color__blue: #79b3ea;
+$color__darkblue: #2162ee;
+$color__yellow: #f3e64c;
+$color__orange: #f48326;
+
+// $color__1: #24f0cb; // rgba(247,96,171,0)
+// $color__2: #ff314c; // rgba(253,187,45,0)
+// $color__3: #480e8f; // rgba(34,193,195,0)
+// $color__4: #6a018d; // rgba(106,1,141,0) 
+// $color__5: #5679f7; // rgba(86,121,247,0)
+// $color__6: #44caa2; // rgba(68,202,162,0)
+// $color__7: #3a87d4; 
+// $color__8: #f5c13c;
+
+$serif: 'Times';
+$sans-serif: 'Helvetica';
+$mono: 'Roboto Mono';
+$display: 'Playfair Display SC';
+
+$gutter: 16px;
+$border-radius: 3px;
+
+$padding--xxs: 8px;
+$padding--xs: 16px;
+$padding--sm: 32px;
+$padding--md: 48px;
+$padding--lg: 64px;
+$padding--xl: 96px;
+$padding--xxl: 132px;
+
+$page--maxwidth: 1140px;
+
+
+// Maps
+
+$breakpoints: (
+    break-sm: 480px,
+    break-md: 748px,
+    break-lg: 960px,
+    break-xl: 1100px
+);
+
+
+// Mixins
+
+@mixin bp($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;    
+        }
+    }
+    @else {
+         @warn "Unfortunately, no value could be retrieved from breakpoint map.";
+    }
+}
+
+@mixin bpany($width, $height: null) {
+    @if ($height) {
+        @media screen and (min-width: $width) and (min-height: $height) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin fill-image {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+@mixin clearfix {
+    clear: both;
+    min-height: 1%;
+    &:before {
+        content: " ";
+    }
+}

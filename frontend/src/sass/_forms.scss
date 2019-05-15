@@ -1,0 +1,31 @@
+/*
+    Forms
+*/
+
+form {
+
+}
+
+label {
+    display: block;
+}
+
+input[type="text"] {
+    display: block;
+    color: $color__blue;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-family: $mono, monospace;
+    outline: none;
+    width: 100%;
+    margin: 0 0 $padding--xs;
+}
+
+#link {
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 1px;
+    height: 1px;
+}

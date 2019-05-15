@@ -1,0 +1,69 @@
+/*
+    Typography
+*/
+
+// Set all font to same style, size & colour
+h1, h2, h3, h4, h5, h6, p, li, label, span {
+    font-family: $mono, monospace;
+    font-size: 1rem;
+    line-height: 100%;
+    color: $color__white;
+    padding: 0 0 $padding--xs;
+
+    &.comment {
+        color: $color__green;
+    }
+
+    &.function {
+        color: $color__yellow;
+    }
+
+    &.param {
+        color: $color__blue;
+    }
+
+    &.var {
+        color: $color__darkblue;
+    }
+
+    &.string {
+        color: $color__orange;
+    }
+
+    &.operator {
+        color: $color__white;
+    }
+
+    &.num {
+        color: $color__brightgreen;
+    }
+
+    &.black {
+        color: $color__black;
+    }
+
+    &.subtle {
+        color: $color__darkgrey;
+    }
+
+    &.large {
+        font-size: 2rem;
+    }
+
+    &.small {
+        font-size: 0.75rem;
+    }
+
+}
+
+p {
+    strong { font-weight: bold; }
+    em { font-style: italic; }
+    &.small {
+        font-size: 0.75rem;
+    }
+}
+
+h4 {
+    text-align: right;
+}

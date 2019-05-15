@@ -1,2 +1,2 @@
-# ova_web
+# OVA
 Web version of the Ova word game
