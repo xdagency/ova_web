@@ -31,15 +31,6 @@ class Start extends Component {
             });
         }
 
-        // Get an image from unsplash
-        // axios.get('https://api.unsplash.com/search/collections?client_id=bbc2b744134b0b85f01e64d5e98ee3379d0a167e00ad64ba7a973289af99a753&page=1&query=neon')
-        //      .then(results => {
-        //         console.log(results);
-        //      })
-        //      .catch(error => {
-        //         console.log(error);
-        //      })
-
     }
 
     // Tie nickname field to the state

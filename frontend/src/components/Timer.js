@@ -45,7 +45,7 @@ class Timer extends Component {
 
     render() {
         return (
-            <article className="overlay" style={{ display: this.state.displayTimer }}>
+            <article className="overlay overlay--timer" style={{ display: this.state.displayTimer }}>
                 <section className="overlay__content">
                     <h3 className="large black">{this.state.seconds}</h3>
                 </section>

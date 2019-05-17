@@ -97,11 +97,16 @@ class Word extends Component {
                 <section className="scores">
 
                     <p>&nbsp;</p>
-                    <p className="comment">// GAME DETAILS<br />// First to 3 points wins!</p>
-                    <p className="param">{ this.props.user_a_name }.score <span className="operator">=</span> <span className="num">{ this.props.user_a_score }</span> <span className="comment">{ this.props.is_user_a ? '// You' : '' }</span></p>
-                    <p className="param">{ this.props.user_b_name === "" ? 'undefined' : this.props.user_b_name }.score <span className="operator">=</span> <span className="num">{ this.props.user_b_score }</span> <span className="comment">{ this.props.is_user_b ? '// You' : '' }</span></p>
-                    <p><span className="var">Round</span> <span className="operator">=</span> <span className="num">{ this.props.round }</span></p>
-                    <p><span className="var">Game ID</span> <span className="operator">=</span> <span className="param">{ this.props.game_id }</span></p>
+                    <p className="comment">// GAME DETAILS (First to 3 points wins)</p>
+                    <p className="param">
+                        { this.props.user_a_name }.score <span className="operator">=</span> <span className="num">{ this.props.user_a_score }</span> <span className="comment">{ this.props.is_user_a ? '// You' : '' }</span><br />
+                        { this.props.user_b_name === "" ? 'undefined' : this.props.user_b_name }.score <span className="operator">=</span> <span className="num">{ this.props.user_b_score }</span> <span className="comment">{ this.props.is_user_b ? '// You' : '' }</span>
+                    </p>
+                    
+                    <p>
+                        <span className="var">Round</span> <span className="operator">=</span> <span className="num">{ this.props.round }</span><br />
+                        <span className="var">Game ID</span> <span className="operator">=</span> <span className="param">{ this.props.game_id }</span>
+                    </p>
 
                 </section>
 

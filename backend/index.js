@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 });
 
 /* MongoDB Connection stuff */
-mongoose.connect('mongodb://localhost/ova');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ova');
 // set db as the variable for the mongoose connection
 const db = mongoose.connection;
 // on open event, console log that we've made a connection
@@ -57,6 +57,9 @@ let dict = new Dictionary(app_id, app_key);
 
 // Array of active games backend is serving
 let activeGames = [];
+
+// Total Games
+const totalRounds = 3;
 
 
 // List of predetermined words
@@ -439,7 +442,7 @@ function updateGameState(u, id, i) {
     activeGames[i].user_b.s_word = '';
 
     // emit the game winner if someone has reached 3 points
-    if (activeGames[i].user_a.score === config.TOTAL_ROUNDS || activeGames[i].user_b.score === config.TOTAL_ROUNDS) {
+    if (activeGames[i].user_a.score === totalRounds || activeGames[i].user_b.score === totalRounds) {
         io.in(id).emit('game-over', {
             game: activeGames[i]
         });

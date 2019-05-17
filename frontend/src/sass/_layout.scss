@@ -69,12 +69,13 @@ header.console__header {
     height: 100vh;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.33);
+    background: rgba(0,0,0,0.35);
 
     // Adjustments for the countdown overlay
-    &.overlay--countdown {
+    &.overlay--timer {
         display: block;
-        background: #FFBFFE;
+        background: rgba(0,0,0,0.8);
+        // background: #FFBFFE;
     }
 
     .overlay__content {
