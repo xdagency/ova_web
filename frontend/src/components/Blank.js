@@ -33,7 +33,7 @@ class Blank extends Component {
 ~~~~~~~~~~~~~~~~~~~~~~~~~
                 </p>
                 
-                <h2 className="comment">/&ast; Hmmmm... can't seem to find that page &ast;/</h2>
+                <h2 className="comment">/* Hmmmm... can't seem to find that page */</h2>
 
                 <div className="btn"><Link to="/">Go to start &rarr;</Link></div>
 

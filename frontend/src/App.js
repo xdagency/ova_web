@@ -463,7 +463,7 @@ class App extends Component {
               <Route path="/setup" render={(props) => { 
                   return <Setup match={props.match} 
                                 game_id={this.state.game_id} 
-                                showToast={this.showToast} /> }} />
+                                serverUrl={this.state.serverUrl} /> }} />
 
               <Route path="/word" render={(props) => { 
                   return <Word match={props.match} 
@@ -516,7 +516,7 @@ class App extends Component {
               {/* <Route path="/game/:game_id" /> */}
               
               {/* Catch all */}
-              <Route path="/*" render={() => { return <Blank />  }} />
+              <Route component={Blank} />
 
           </Switch>
 

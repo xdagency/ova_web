@@ -56,7 +56,7 @@ class Setup extends Component {
                     <div className="btn btn--function"><Link to="/word">Start playing() &rarr;</Link></div>
 
                     {/* Hidden field that contains game link for copying */}
-                    <input type="text" defaultValue={'http://localhost:3000/?gid=' + this.props.game_id} id="link" />
+                    <input type="text" defaultValue={this.props.serverUrl + '/?gid=' + this.props.game_id} id="link" />
                 
                 </section>
 
