@@ -11,7 +11,8 @@ import Toast from './components/Toast';
 import GameOver from './components/GameOver';
 // import Redirect from 'react-router-dom/Redirect';
 
-const socket = io('https://ovagame.herokuapp.com');
+// const socket = io('https://ovagame.herokuapp.com');
+const socket = io('http://localhost:8081');
 
 class App extends Component {
 
@@ -20,7 +21,8 @@ class App extends Component {
       this.state = {
           
           /* Config */
-          serverUrl: 'https://ovagame.herokuapp.com',
+          // serverUrl: 'https://ovagame.herokuapp.com',
+          serverUrl: 'http://localhost:8081',
 
           /* Redirects */
           redirectSetup: false,
@@ -463,6 +465,7 @@ class App extends Component {
               <Route path="/setup" render={(props) => { 
                   return <Setup match={props.match} 
                                 game_id={this.state.game_id} 
+                                showToast={this.showToast} 
                                 serverUrl={this.state.serverUrl} /> }} />
 
               <Route path="/word" render={(props) => { 
