@@ -4,7 +4,7 @@ const   app = require('express')(),
         io = require('socket.io')(http),
         bodyParser = require('body-parser'),
         mongoose = require('mongoose'),
-        Dictionary = require('oxford-dictionary-api'),
+        Dictionary = require('oxford-dictionaries-api'),
         randomize = require('randomatic'),
         wordscramble = require('wordscramble');
 
@@ -51,8 +51,9 @@ app.use(bodyParser.json());
 /* Oxford Dictionary API */
 
 // Define dictionary api variables from config file
-let app_id = config.DICT_APP_ID;
-let app_key = config.DICT_APP_KEY;
+const app_id = config.DICT_APP_ID;
+const app_key = config.DICT_APP_KEY;
+
 
 // Dictionary constructor
 let dict = new Dictionary(app_id, app_key);
@@ -93,19 +94,20 @@ app.get('/word', (req, res) => {
 app.post('/word', (req, res) => {
 
     let wordToCheck = req.body.word;
-
     // console.log('word submitted:', wordToCheck);
 
-    dict.find(wordToCheck, (err, data) => {
-        
-        if (err) {
-            // console.log('error:', err);
-            res.sendStatus(404);
-            return;
-        }
+    dict.entries({ word_id: wordToCheck })
+        .then(data => {
 
-        res.sendStatus(200);
-    });
+            // Word found, send a 200 status
+            res.sendStatus(200);
+        })
+        .catch(error => {
+
+            // Word not found, send a 404 status
+            res.sendStatus(404);
+            console.log('Error:', error);
+        })
 
 });
 
